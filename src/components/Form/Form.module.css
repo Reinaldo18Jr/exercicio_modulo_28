@@ -1,0 +1,24 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.input {
+    text-align: center;
+    font-size: 25px;
+    width: 500px;
+    margin-bottom: 32px;
+}
+
+.btn {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px;
+}
