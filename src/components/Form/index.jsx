@@ -8,6 +8,11 @@ const Form = () => {
     const [resultado, setResultado] = useState("");
 
     const calcularImc = () => {
+        if (isNaN(peso) || isNaN(altura) || altura <= 0) {
+            setResultado("Por favor insira um valor de peso e altura válidos.");
+            return;
+        }
+
         const imc = peso / (altura * altura);
         setResultado(imc.toFixed(2));
     };
@@ -33,14 +38,15 @@ const Form = () => {
             <button 
                 className={styles.btn}
                 type="button" 
-                onClick={calcularImc()}
+                onClick={calcularImc}
                 >
                     Calcular
                 </button>
                 {resultado && (
                     <div>
-                        <p>
-                            Seu IMC é de: {resultado} <br />
+                        <p className={styles.p}>
+                            Seu IMC é de: <strong>{resultado}</strong> <br />
+                            <br />
                             - Menor que 16: Magreza grave <br />
                             - Entre 16 e 16,9: Magreza moderada <br />
                             - Entre 17 e 18,5: Magreza leve <br />
